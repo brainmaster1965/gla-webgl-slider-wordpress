@@ -84,7 +84,7 @@ WordPress 6.8 or newer and PHP 7.4 or newer.
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.1.0 =
 * New: autoplay pauses while a slider is not visible (several sliders per page no longer rotate in the background).
 * New: slide images are lazy loaded; only the first image of the first slider on a page loads eagerly.
 
