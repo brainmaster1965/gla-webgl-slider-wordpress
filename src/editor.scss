@@ -1,0 +1,138 @@
+/**
+ * The following styles get applied inside the editor only.
+ */
+@import "config";
+
+/* The frontend styles make the block full width (100vw) and lock text selection / touch.
+   Not wanted inside the editor canvas, so reset it here (higher specificity wins
+   regardless of the load order of style.css / editor.css). */
+.editor-styles-wrapper .wp-block-gla-webglslider {
+	width: auto;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	max-width: 100% !important;
+	touch-action: auto;
+	user-select: auto;
+	-webkit-user-select: auto;
+}
+
+.wp-block-gla-webglslider {
+	padding: 20px;
+	border: 2px dashed #007cba;
+	height: auto;
+	min-height: 400px;
+	background: #f0f0f0;
+
+	.editor-gla-webglslider-preview {
+		position: relative;
+		height: 400px;
+		max-width: 800px;
+		margin: 20px auto;
+		border: 1px solid #ddd;
+		background-color: #eee;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.editor-gla-webglslider-slideno {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			top: 0;
+		}
+
+		.editor-gla-webglslider-image {
+			width: 100%;
+			height: auto;
+			max-height: 500px;
+			object-fit: cover;
+			opacity: 0.5;
+		}
+
+		.editor-gla-webglslider-content {
+			position: absolute;
+			inset: 0;
+			/* top padding leaves room for the info text of the preview */
+			padding: 36px 20px 20px;
+			z-index: 10;
+			display: flex;
+			flex-direction: column;
+			box-sizing: border-box;
+
+			/* default (e.g. unknown value): centered */
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+
+			/* 9 positions, same mixin as in style.scss */
+			@include content-position;
+
+			.editor-gla-webglslider-author {
+				color: var(--slider-author-color);
+				font-size: var(--slider-author-size);
+				font-family: var(--slider-author-font);
+				font-weight: bold;
+				letter-spacing: 2px;
+				margin-bottom: 8px;
+			}
+			.editor-gla-webglslider-title {
+				color: var(--slider-title-color);
+				font-size: var(--slider-title-size);
+				font-family: var(--slider-title-font);
+				margin: 5px 0;
+				line-height: 1;
+			}
+			.editor-gla-webglslider-topic {
+				color: var(--slider-topic-color);
+				font-size: var(--slider-topic-size);
+				font-family: var(--slider-topic-font);
+				margin: 5px 0;
+				line-height: 1;
+			}
+			.editor-gla-webglslider-description {
+				margin: 10px 0;
+				font-size: 14px;
+			}
+
+			.editor-gla-webglslider-buttons {
+				display: flex;
+				gap: 10px;
+				margin-top: 15px;
+				width: 100%;
+
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: auto /* 124px */;
+					height: 36px;
+					padding: 4px 16px;
+
+					font-size: 0.75em;
+					font-weight: 600;
+					text-decoration: none;
+					cursor: default;
+				}
+				@each $i in 1, 2 {
+					.button-#{$i} {
+						color: var(--slider-button#{$i}-textcolor);
+						background-color: var(--slider-button#{$i}-color);
+						border-radius: var(--slider-button#{$i}-borderradius);
+
+						&.has-outline {
+							border: var(--slider-button#{$i}-outlinewidth, 0px)
+								solid
+								var(--slider-button#{$i}-outlinecolor, transparent);
+						}
+
+						&:hover {
+							background-color: var(--slider-button#{$i}-hovercolor);
+							color: var(--slider-button#{$i}-hovertextcolor);
+						}
+					}
+				}
+			}
+		}
+	}
+}

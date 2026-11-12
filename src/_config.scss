@@ -1,0 +1,69 @@
+/* common mixins */
+
+/**
+ * Content position of a single slide (9 positions).
+ * Class name: is-position-{vertical}-{horizontal}, e.g. is-position-top-left.
+ *
+ * The content box fills the whole slide and is a flex column:
+ *   - justify-content = vertical position   (top / center / bottom)
+ *   - align-items     = horizontal position (left / center / right)
+ * text-align and the button row follow the horizontal position.
+ */
+$content-vertical: (
+	top: flex-start,
+	center: center,
+	bottom: flex-end,
+);
+
+$content-horizontal: (
+	left: flex-start,
+	center: center,
+	right: flex-end,
+);
+
+@mixin content-position {
+	@each $v, $v-value in $content-vertical {
+		@each $h, $h-value in $content-horizontal {
+			&.is-position-#{$v}-#{$h} {
+				justify-content: $v-value;
+				align-items: $h-value;
+				text-align: $h;
+
+				.slide-buttons {
+					justify-content: $h-value;
+				}
+			}
+		}
+	}
+}
+
+/* animations */
+@keyframes showContent {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
+}
+
+@keyframes hideContent {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+		filter: blur(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-30px);
+		filter: blur(10px);
+	}
+}
+
+@keyframes runningTime {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0;
+	}
+}

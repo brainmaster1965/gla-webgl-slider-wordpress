@@ -1,0 +1,248 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gla/webglslider",
+	"version": "1.1.0",
+	"title": "WebGL Slider",
+	"category": "widgets",
+	"icon": "slides",
+	"description": "Premium hero slider with WebGL transition effects, parallax effect and animated custom content.",
+	"example": {
+		"attributes": {
+			"preview": true
+		},
+		"viewportWidth": 1200
+	},
+	"supports": {
+		"anchor": true,
+		"color": {
+			"background": true,
+			"text": false
+		},
+		"html": false
+	},
+	"textdomain": "gla-webglslider",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"preview": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"interval": {
+			"type": "number",
+			"default": 7000,
+			"minimum": 3000,
+			"maximum": 15000
+		},
+		"stopOnHover": {
+			"type": "boolean",
+			"default": true
+		},
+		"hideProgress": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideNavigation": {
+			"type": "boolean",
+			"default": false
+		},
+		"hidePagination": {
+			"type": "boolean",
+			"default": false
+		},
+		"effect": {
+			"type": "string",
+			"default": "displacement"
+		},
+		"webglDuration": {
+			"type": "number",
+			"default": 1500,
+			"minimum": 500,
+			"maximum": 3000
+		},
+		"contentAlignment": {
+			"type": "string",
+			"default": "center"
+		},
+
+		"authorColor": { "type": "string", "default": "#ffffff" },
+		"authorFontSize": { "type": "number", "default": 24 },
+		"authorFontFamily": { "type": "string", "default": "sans-serif" },
+
+		"titleColor": { "type": "string", "default": "#ffffff" },
+		"titleFontSize": { "type": "number", "default": 48 },
+		"titleFontFamily": { "type": "string", "default": "sans-serif" },
+
+		"topicColor": { "type": "string", "default": "#f1683a" },
+		"topicFontSize": { "type": "number", "default": 48 },
+		"topicFontFamily": { "type": "string", "default": "sans-serif" },
+
+		"slides": {
+			"type": "array",
+			"default": [
+				{
+					"showContent": {
+						"author": true,
+						"title": true,
+						"topic": true,
+						"description": true,
+						"button1": true,
+						"button2": true
+					},
+					"author": "Author 1",
+					"title": "TITLE 1",
+					"topic": "TOPIC 1",
+					"description": "Here comes the description of the slide.",
+					"imageUrl": "assets/images/img1.jpg",
+					"contentPosition": "center-center",
+					"authorColor": "#fff",
+					"authorFontSize": 24,
+					"authorFontFamily": "sans-serif",
+					"titleColor": "#fff",
+					"titleFontSize": 48,
+					"titleFontFamily": "sans-serif",
+					"topicColor": "#f1683a",
+					"topicFontSize": 48,
+					"topicFontFamily": "sans-serif",
+					"button1Text": "SEE MORE",
+					"button1Url": "#",
+					"button1Color": "#eee",
+					"button1TextColor": "#000",
+					"button1HoverColor": "#f1683a",
+					"button1HoverTextColor": "#fff",
+					"button1BorderRadius": 4,
+					"button1Outline": true,
+					"button1OutlineColor": "#fff",
+					"button1OutlineWidth": 1,
+					"button2Text": "SUBSCRIBE",
+					"button2Url": "#",
+					"button2Color": "transparent",
+					"button2TextColor": "#fff",
+					"button2HoverColor": "#f1683a",
+					"button2HoverTextColor": "#fff",
+					"button2BorderRadius": 4,
+					"button2Outline": true,
+					"button2OutlineColor": "#fff",
+					"button2OutlineWidth": 1
+				},
+				{
+					"showContent": {
+						"author": true,
+						"title": true,
+						"topic": true,
+						"description": true,
+						"button1": true,
+						"button2": true
+					},
+					"author": "Author 2",
+					"title": "TITLE 2",
+					"topic": "TOPIC 2",
+					"description": "Here comes the description of the slide.",
+					"imageUrl": "assets/images/img2.jpg",
+					"contentPosition": "center-center",
+					"authorColor": "#fff",
+					"authorFontSize": 24,
+					"authorFontFamily": "sans-serif",
+					"titleColor": "#fff",
+					"titleFontSize": 48,
+					"titleFontFamily": "sans-serif",
+					"topicColor": "#f1683a",
+					"topicFontSize": 48,
+					"topicFontFamily": "sans-serif",
+					"button1Text": "SEE MORE",
+					"button1Url": "#",
+					"button1Color": "#eee",
+					"button1TextColor": "#000",
+					"button1HoverColor": "#f1683a",
+					"button1HoverTextColor": "#fff",
+					"button1BorderRadius": 4,
+					"button1Outline": true,
+					"button1OutlineColor": "#fff",
+					"button1OutlineWidth": 1,
+					"button2Text": "SUBSCRIBE",
+					"button2Url": "#",
+					"button2Color": "transparent",
+					"button2TextColor": "#fff",
+					"button2HoverColor": "#f1683a",
+					"button2HoverTextColor": "#fff",
+					"button2BorderRadius": 4,
+					"button2Outline": true,
+					"button2OutlineColor": "#fff",
+					"button2OutlineWidth": 1
+				}
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"showContent": {
+						"type": "object",
+						"properties": {
+							"author": { "type": "boolean" },
+							"title": { "type": "boolean" },
+							"topic": { "type": "boolean" },
+							"description": { "type": "boolean" },
+							"button1": { "type": "boolean" },
+							"button2": { "type": "boolean" }
+						}
+					},
+					"author": { "type": "string" },
+					"title": { "type": "string" },
+					"topic": { "type": "string" },
+					"description": { "type": "string" },
+					"imageUrl": { "type": "string" },
+					"contentPosition": {
+						"type": "string",
+						"enum": [
+							"top-left",
+							"top-center",
+							"top-right",
+							"center-left",
+							"center-center",
+							"center-right",
+							"bottom-left",
+							"bottom-center",
+							"bottom-right"
+						]
+					},
+					"authorColor": { "type": "string" },
+					"authorFontSize": { "type": "number" },
+					"authorFontFamily": { "type": "string" },
+					"titleColor": { "type": "string" },
+					"titleFontSize": { "type": "number" },
+					"titleFontFamily": { "type": "string" },
+					"topicColor": { "type": "string" },
+					"topicFontSize": { "type": "number" },
+					"topicFontFamily": { "type": "string" },
+					"button1Text": { "type": "string" },
+					"button1Url": { "type": "string" },
+					"button1Color": { "type": "string" },
+					"button1TextColor": { "type": "string" },
+					"button1HoverColor": { "type": "string" },
+					"button1HoverTextColor": { "type": "string" },
+					"button1BorderRadius": { "type": "number" },
+					"button1Outline": { "type": "boolean" },
+					"button1OutlineColor": { "type": "string" },
+					"button1OutlineWidth": { "type": "number" },
+					"button2Text": { "type": "string" },
+					"button2Url": { "type": "string" },
+					"button2Color": { "type": "string" },
+					"button2TextColor": { "type": "string" },
+					"button2HoverColor": { "type": "string" },
+					"button2HoverTextColor": { "type": "string" },
+					"button2BorderRadius": { "type": "number" },
+					"button2Outline": { "type": "boolean" },
+					"button2OutlineColor": { "type": "string" },
+					"button2OutlineWidth": { "type": "number" }
+				}
+			}
+		}
+	}
+}

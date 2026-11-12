@@ -1,0 +1,27 @@
+{
+	"name": "gla-webglslider",
+	"version": "1.1.0",
+	"description": "A fancy slider block for WP Gutenberg with WebGL transition effects.",
+	"author": "GLa",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --webpack-copy-php --blocks-manifest",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --webpack-copy-php --blocks-manifest"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "latest",
+		"@wordpress/blocks": "latest",
+		"@wordpress/i18n": "latest",
+		"gsap": "^3.13.0",
+		"three": "^0.180.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^35.0.0"
+	}
+}
