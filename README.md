@@ -4,6 +4,15 @@ A fancy slider block for the WordPress block editor (Gutenberg) with WebGL trans
 
 ![WebGL Slider preview](assets/images/webglslider-preview.png)
 
+---
+
+## 🚀 Live Demo
+
+Check out the interactive live demo deployed on Wordpress Playground:  
+👉 **[View Live Demo](https://playground.wordpress.net/?import-site=https://raw.githubusercontent.com/brainmaster1965/gla-webgl-slider-wordpress/main/demo.zip)**
+
+---
+
 |                    |                  |
 | ------------------ | ---------------- |
 | Version            | 1.1.0            |
