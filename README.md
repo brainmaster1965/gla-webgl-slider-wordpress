@@ -1,4 +1,4 @@
-# Gla WebGL Slider
+# <span style="display: inline-block; vertical-align: middle;"><img src="https://img.shields.io/badge/v1.1.0-f1683a?style=for-the-badge&logoColor=white" alt="v2.3.0"></span> Gla WebGL Hero Slider - Wordpress
 
 A fancy slider block for the WordPress block editor (Gutenberg) with WebGL transition effects.
 
