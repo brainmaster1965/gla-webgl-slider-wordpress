@@ -1,4 +1,4 @@
-# <span style="display: inline-block; vertical-align: middle;"><img src="https://img.shields.io/badge/v1.1.0-f1683a?style=for-the-badge&logoColor=white" alt="v2.3.0"></span> Gla WebGL Hero Slider - Wordpress
+# <span style="display: inline-block; vertical-align: middle;"><img src="https://img.shields.io/badge/v1.2.0-f1683a?style=for-the-badge&logoColor=white" alt="v1.2.0"></span> Gla WebGL Hero Slider - Wordpress
 
 A fancy slider block for the WordPress block editor (Gutenberg) with WebGL transition effects.
 
@@ -15,7 +15,7 @@ Check out the interactive live demo deployed on Wordpress Playground:
 
 |                    |                  |
 | ------------------ | ---------------- |
-| Version            | 1.1.0            |
+| Version            | 1.2.0            |
 | Requires WordPress | 6.8              |
 | Requires PHP       | 7.4              |
 | License            | GPL-2.0-or-later |
@@ -24,7 +24,7 @@ Check out the interactive live demo deployed on Wordpress Playground:
 
 - **WebGL transition effects**: 10 shader effects (Displacement, Fluid, Dots, Pixelate, Glitch, Ripple, Zoom Blur, Wave, Dissolve, Swirl), chosen per block in the editor. New effects are just one file in `src/webgl/effects/` (see below). A jump via pagination is always a single transition.
 - **Scroll parallax**: the image moves while scrolling (reduced on tablets, off on smartphones).
-- **Full width**: breaks out of the content column and uses the full viewport width.
+- **Full width**: supports the "Wide" and "Full width" alignments of the block editor and follows the layout of your theme.
 - **Content position per slide**: 9 positions for every single slide (see below).
 - **Animated content**: author, title, topic, description and buttons fade in one after the other once the image is revealed.
 - **Per slide settings**: image (media library), texts, visible elements, typography (color, size, font family for author, title, topic) and two buttons with colors, hover colors, border radius and outline.
@@ -76,8 +76,8 @@ Notes: one WebGL context per slider (browsers allow about 16 per page); the canv
 1. Edit a page or post and open the block inserter.
 2. Add **WebGL Slider** from the **Widgets** category.
 3. In the sidebar:
-   - _General slider settings_: autoplay, interval, hover pause, transition effect, transition duration, arrows, pagination, progress bar.
-   - _Manage slides_: per slide image, texts, visible elements, **content position**, typography and buttons. Add or remove slides at the bottom.
+    - _General slider settings_: autoplay, interval, hover pause, transition effect, transition duration, arrows, pagination, progress bar.
+    - _Manage slides_: per slide image, texts, visible elements, **content position**, typography and buttons. Add or remove slides at the bottom.
 4. Check the result on the frontend via the page preview. The editor shows only the first slide, without animation.
 
 ### Develop
@@ -118,6 +118,13 @@ gla-webglslider/
 ```
 
 ## Changelog
+
+### 1.2.0
+
+- **New:** the block supports the alignments "Wide" and "Full width" (block toolbar). New sliders start with full width.
+- **Changed:** full width is now handled by the theme's own alignment (`alignfull` / `alignwide`) instead of a `100vw` calculation. The scrollbar width script was removed.
+- **Fixed:** in themes with a global padding the slider started at the content edge and overflowed the viewport on the right.
+- **Fixed:** the editor preview now follows the selected alignment.
 
 ### 1.1.0
 

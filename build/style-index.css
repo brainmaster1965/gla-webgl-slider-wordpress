@@ -1,1 +1,600 @@
-@keyframes showContent{to{filter:blur(0);opacity:1;transform:translateY(0)}}@keyframes hideContent{0%{filter:blur(0);opacity:1;transform:translateY(0)}to{filter:blur(10px);opacity:0;transform:translateY(-30px)}}@keyframes runningTime{0%{width:100%}to{width:0}}.wp-block-gla-webglslider{--webgl-duration:1500ms;--gla-hero-width:calc(100vw - var(--gla-scrollbar-width, 0px));height:100vh;height:100svh;left:0;margin-left:calc((100% - var(--gla-hero-width))/2)!important;margin-right:calc((100% - var(--gla-hero-width))/2)!important;max-width:none!important;overflow:hidden;position:relative;top:0;touch-action:pan-y;user-select:none;-webkit-user-select:none;width:var(--gla-hero-width)}.wp-block-gla-webglslider .slide-list{height:100%;position:relative;width:100%}.wp-block-gla-webglslider .slide-item{height:100%;inset:0;position:absolute;visibility:hidden;width:100%;z-index:1}.wp-block-gla-webglslider .slide-item.is-target{visibility:visible;z-index:2}.wp-block-gla-webglslider .slide-item.is-current{visibility:visible;z-index:3}.wp-block-gla-webglslider .slide-item.is-leaving{z-index:4}.wp-block-gla-webglslider .slide-wrapper{height:100%;position:relative;width:100%}.wp-block-gla-webglslider .slide-item img{height:150vh;left:0;max-width:none;object-fit:cover;opacity:0;position:absolute;top:0;transform:translateY(var(--parallax-offset,0));transition:transform .1s ease-out,opacity .6s ease-in;width:100%;will-change:transform,opacity;-webkit-user-drag:none}.wp-block-gla-webglslider.is-ready .slide-item img{opacity:1}@media(scripting:none){.wp-block-gla-webglslider .slide-item img{opacity:1}}@media(max-width:1024px){.wp-block-gla-webglslider .slide-item img{height:120vh}}@media(max-width:767px){.wp-block-gla-webglslider .slide-item img{height:100vh;transform:translateY(0)!important;will-change:auto}}.wp-block-gla-webglslider .slide-content{--gla-content-pad-x:70px;--gla-content-pad-y:100px;align-items:center;bottom:0;box-sizing:border-box;color:#fff;display:flex;flex-direction:column;font-size:16px;justify-content:center;left:50%;line-height:1.5;max-width:1600px;padding:var(--gla-content-pad-y) var(--gla-content-pad-x);position:absolute;text-align:center;text-shadow:0 5px 10px rgba(0,0,0,.267);top:0;transform:translateX(-50%);width:100%;z-index:10}.wp-block-gla-webglslider .slide-content.is-position-top-left{align-items:flex-start;justify-content:flex-start;text-align:left}.wp-block-gla-webglslider .slide-content.is-position-top-left .slide-buttons{justify-content:flex-start}.wp-block-gla-webglslider .slide-content.is-position-top-center{align-items:center;justify-content:flex-start;text-align:center}.wp-block-gla-webglslider .slide-content.is-position-top-center .slide-buttons{justify-content:center}.wp-block-gla-webglslider .slide-content.is-position-top-right{align-items:flex-end;justify-content:flex-start;text-align:right}.wp-block-gla-webglslider .slide-content.is-position-top-right .slide-buttons{justify-content:flex-end}.wp-block-gla-webglslider .slide-content.is-position-center-left{align-items:flex-start;justify-content:center;text-align:left}.wp-block-gla-webglslider .slide-content.is-position-center-left .slide-buttons{justify-content:flex-start}.wp-block-gla-webglslider .slide-content.is-position-center-center{align-items:center;justify-content:center;text-align:center}.wp-block-gla-webglslider .slide-content.is-position-center-center .slide-buttons{justify-content:center}.wp-block-gla-webglslider .slide-content.is-position-center-right{align-items:flex-end;justify-content:center;text-align:right}.wp-block-gla-webglslider .slide-content.is-position-center-right .slide-buttons{justify-content:flex-end}.wp-block-gla-webglslider .slide-content.is-position-bottom-left{align-items:flex-start;justify-content:flex-end;text-align:left}.wp-block-gla-webglslider .slide-content.is-position-bottom-left .slide-buttons{justify-content:flex-start}.wp-block-gla-webglslider .slide-content.is-position-bottom-center{align-items:center;justify-content:flex-end;text-align:center}.wp-block-gla-webglslider .slide-content.is-position-bottom-center .slide-buttons{justify-content:center}.wp-block-gla-webglslider .slide-content.is-position-bottom-right{align-items:flex-end;justify-content:flex-end;text-align:right}.wp-block-gla-webglslider .slide-content.is-position-bottom-right .slide-buttons{justify-content:flex-end}.wp-block-gla-webglslider .slide-author{color:var(--slider-author-color);font-family:var(--slider-author-font);font-size:var(--slider-author-size);font-weight:700;letter-spacing:3px;margin-bottom:10px}.wp-block-gla-webglslider .slide-title{color:var(--slider-title-color);font-family:var(--slider-title-font);font-size:var(--slider-title-size);line-height:1.1;margin:10px 0}.wp-block-gla-webglslider .slide-topic{color:var(--slider-topic-color);font-family:var(--slider-topic-font);font-size:var(--slider-topic-size);line-height:1.1;margin:10px 0}.wp-block-gla-webglslider .slide-description{margin-top:10px}.wp-block-gla-webglslider .slide-buttons{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;width:100%}.wp-block-gla-webglslider .slide-buttons a{align-items:center;display:flex;font-weight:600;height:45px;justify-content:center;letter-spacing:2px;padding:4px 16px;text-decoration:none;text-shadow:none;transition:all .3s ease;width:auto}.wp-block-gla-webglslider .slide-buttons .button-1{background-color:var(--slider-button1-color);border-radius:var(--slider-button1-borderradius);color:var(--slider-button1-textcolor)}.wp-block-gla-webglslider .slide-buttons .button-1.has-outline{border:var(--slider-button1-outlinewidth,0) solid var(--slider-button1-outlinecolor,transparent)}.wp-block-gla-webglslider .slide-buttons .button-1:hover{background-color:var(--slider-button1-hovercolor);color:var(--slider-button1-hovertextcolor)}.wp-block-gla-webglslider .slide-buttons .button-2{background-color:var(--slider-button2-color);border-radius:var(--slider-button2-borderradius);color:var(--slider-button2-textcolor)}.wp-block-gla-webglslider .slide-buttons .button-2.has-outline{border:var(--slider-button2-outlinewidth,0) solid var(--slider-button2-outlinecolor,transparent)}.wp-block-gla-webglslider .slide-buttons .button-2:hover{background-color:var(--slider-button2-hovercolor);color:var(--slider-button2-hovertextcolor)}.wp-block-gla-webglslider .slide-arrows{box-sizing:border-box;display:flex;justify-content:space-between;left:0;padding:0 20px;pointer-events:none;position:absolute;top:50%;transform:translateY(-50%);width:100%;z-index:100}.wp-block-gla-webglslider .slide-arrows button{background-color:hsla(0,0%,93%,.267);border:none;border-radius:50%;color:#fff;cursor:pointer;font-family:monospace;font-weight:700;height:40px;line-height:1;padding:0;pointer-events:auto;transition:.5s;width:40px}.wp-block-gla-webglslider .slide-arrows button:hover{background-color:#fff;color:#000}.wp-block-gla-webglslider .slide-pagination{bottom:50px;display:flex;gap:8px;left:50%;position:absolute;transform:translateX(-50%);z-index:100}.wp-block-gla-webglslider .slide-pagination button{background-color:hsla(0,0%,93%,.267);border:none;border-radius:2px;cursor:pointer;height:14px;padding:0;transition:background-color .3s,transform .3s;width:14px}.wp-block-gla-webglslider .slide-pagination button:hover{background-color:#fff;transform:scale(1.1)}.wp-block-gla-webglslider .slide-pagination button.active{background-color:#f1683a;transform:scale(1.1)}.wp-block-gla-webglslider .slide-arrows button:focus-visible,.wp-block-gla-webglslider .slide-pagination button:focus-visible{outline:2px solid #fff;outline-offset:2px}.wp-block-gla-webglslider.is-animating .slide-arrows button,.wp-block-gla-webglslider.is-animating .slide-pagination button{pointer-events:none}.wp-block-gla-webglslider .slide-content>*{filter:blur(20px);opacity:0;transform:translateY(50px)}.wp-block-gla-webglslider .slide-item.is-current .slide-content>*{animation:showContent .5s linear 1 forwards}.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-author{animation-delay:.6s}.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-title{animation-delay:.8s}.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-topic{animation-delay:1s}.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-description{animation-delay:1.2s}.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-buttons{animation-delay:1.4s}.wp-block-gla-webglslider .slide-item.is-current.is-leaving .slide-content>*{animation:hideContent .4s ease-in 1 forwards;animation-delay:0s!important}.wp-block-gla-webglslider .slide-time{background-color:#f1683a;height:3px;left:0;position:absolute;top:0;width:0;z-index:1000}.wp-block-gla-webglslider.is-animating .slide-time{animation:runningTime var(--webgl-duration) linear 1 forwards}.wp-block-gla-webglslider .gla-gl-canvas{display:block;height:100%;inset:0;pointer-events:none;position:absolute;visibility:hidden;width:100%;z-index:0}.wp-block-gla-webglslider.is-webgl .gla-gl-canvas{visibility:visible}.wp-block-gla-webglslider.is-webgl .slide-item img{visibility:hidden}.wp-block-gla-webglslider:not(.is-webgl) .slide-item.is-leaving img{opacity:0;transition:opacity var(--webgl-duration) ease-in-out}@media(max-width:767px){.wp-block-gla-webglslider{height:80vh;height:80svh}.wp-block-gla-webglslider .slide-content{--gla-content-pad-x:44px;--gla-content-pad-y:70px}.wp-block-gla-webglslider .slide-arrows{padding:0 8px}.wp-block-gla-webglslider .slide-arrows button{height:32px;width:32px}.wp-block-gla-webglslider .slide-author{--slider-author-size:16px;margin-bottom:5px}.wp-block-gla-webglslider .slide-title{--slider-title-size:28px;margin:5px 0}.wp-block-gla-webglslider .slide-topic{--slider-topic-size:16px;margin:5px 0}.wp-block-gla-webglslider .slide-description{font-size:12px;line-height:1.3;margin-top:5px}.wp-block-gla-webglslider .slide-buttons{gap:10px;margin-top:12px}.wp-block-gla-webglslider .slide-buttons a{font-size:10px;height:38px;letter-spacing:1px;padding:0 8px}}@media(prefers-reduced-motion:reduce){.wp-block-gla-webglslider{--webgl-duration:1ms!important}.wp-block-gla-webglslider .slide-item img{transform:none!important;transition:none}.wp-block-gla-webglslider .slide-item.is-current .slide-content>*{animation:none!important;filter:none!important;opacity:1!important;transform:none!important}}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * Shared and Frontend Styles
+ * Hero Slider with WebGL transition effects (canvas, see src/webgl/), CSS
+ * cross-fade as fallback, and scroll parallax.
+ */
+/* common mixins */
+/**
+ * Content position of a single slide (9 positions).
+ * Class name: is-position-{vertical}-{horizontal}, e.g. is-position-top-left.
+ *
+ * The content box fills the whole slide and is a flex column:
+ *   - justify-content = vertical position   (top / center / bottom)
+ *   - align-items     = horizontal position (left / center / right)
+ * text-align and the button row follow the horizontal position.
+ */
+/* animations */
+@keyframes showContent {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes hideContent {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+    filter: blur(10px);
+  }
+}
+@keyframes runningTime {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+/*------------------------*/
+/* general / full width   */
+/*------------------------*/
+.wp-block-gla-webglslider {
+  /* Transition duration: set per block instance by render.php (inline style),
+     this is only the fallback. view.js reads the same variable.
+     (the name is a leftover of the old webgl effect, kept for compatibility) */
+  --webgl-duration: 1500ms;
+  /* 100vw includes the scrollbar; view.js writes its width to --gla-scrollbar-width */
+  /* --gla-hero-width: calc(100vw - var(--gla-scrollbar-width, 0px)); */
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100svh; /* mobile: ignores the collapsing browser address bar */
+  /* width: var(--gla-hero-width); */
+  /* full width look, even inside a narrow content column */
+  /* margin-left: calc((100% - var(--gla-hero-width)) / 2) !important; */
+  /* margin-right: calc((100% - var(--gla-hero-width)) / 2) !important; */
+  /* important override theme restrictions */
+  /* max-width: none !important; */
+  overflow: hidden;
+  /* no text selection while swiping */
+  user-select: none;
+  -webkit-user-select: none;
+  /* vertical page scrolling stays, horizontal swipes go to the slider */
+  touch-action: pan-y;
+}
+
+.wp-block-gla-webglslider .slide-list {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/*------------------------------------------------------------------*/
+/* slide layers (the WebGL canvas lies below all of them, z-index 0) */
+/*   (default)  hidden                                              */
+/*   is-target  next slide while a transition runs, text still hidden */
+/*   is-current lies on top, visible                                */
+/*   is-leaving current slide while a transition runs, z-index 4,   */
+/*              its text fades out                                  */
+/*------------------------------------------------------------------*/
+.wp-block-gla-webglslider .slide-item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.wp-block-gla-webglslider .slide-item.is-target {
+  visibility: visible;
+  z-index: 2;
+}
+
+.wp-block-gla-webglslider .slide-item.is-current {
+  visibility: visible;
+  z-index: 3;
+}
+
+.wp-block-gla-webglslider .slide-item.is-leaving {
+  z-index: 4;
+}
+
+.wp-block-gla-webglslider .slide-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/*------------------------*/
+/* image + parallax       */
+/*------------------------*/
+.wp-block-gla-webglslider .slide-item img {
+  width: 100%;
+  height: 150vh; /* standard for desktop */
+  max-width: none;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  will-change: transform, opacity; /* optimized for parallax */
+  transition: transform 0.1s ease-out, opacity 0.6s ease-in;
+  transform: translateY(var(--parallax-offset, 0));
+  -webkit-user-drag: none;
+}
+
+/* images fade in once view.js has initialized the slider */
+.wp-block-gla-webglslider.is-ready .slide-item img {
+  opacity: 1;
+}
+
+/* without JavaScript the first slide is still shown */
+@media (scripting: none) {
+  .wp-block-gla-webglslider .slide-item img {
+    opacity: 1;
+  }
+}
+/* tablet: less parallax travel */
+@media (max-width: 1024px) {
+  .wp-block-gla-webglslider .slide-item img {
+    height: 120vh;
+  }
+}
+/* on mobile set image to 100vh and switch off parallax effect */
+@media (max-width: 767px) {
+  .wp-block-gla-webglslider .slide-item img {
+    height: 100vh;
+    transform: translateY(0) !important;
+    will-change: auto;
+  }
+}
+/*------------------------*/
+/* content                */
+/*------------------------*/
+/* The content box fills the whole slide (top/bottom: 0), so the 9 positions
+   (is-position-{top|center|bottom}-{left|center|right}, see _config.scss)
+   are simply flex alignments inside it. The position is set per slide. */
+.wp-block-gla-webglslider .slide-content {
+  /* distance to the slide edges; the vertical value keeps the content
+     clear of the pagination dots (bottom) and the progress bar (top) */
+  --gla-content-pad-x: 70px;
+  --gla-content-pad-y: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 1600px;
+  padding: var(--gla-content-pad-y) var(--gla-content-pad-x);
+  color: #fff;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2666666667);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* default (e.g. unknown value): centered */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-top-left {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+.wp-block-gla-webglslider .slide-content.is-position-top-left .slide-buttons {
+  justify-content: flex-start;
+}
+.wp-block-gla-webglslider .slide-content.is-position-top-center {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-top-center .slide-buttons {
+  justify-content: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-top-right {
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: right;
+}
+.wp-block-gla-webglslider .slide-content.is-position-top-right .slide-buttons {
+  justify-content: flex-end;
+}
+.wp-block-gla-webglslider .slide-content.is-position-center-left {
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+.wp-block-gla-webglslider .slide-content.is-position-center-left .slide-buttons {
+  justify-content: flex-start;
+}
+.wp-block-gla-webglslider .slide-content.is-position-center-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-center-center .slide-buttons {
+  justify-content: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-center-right {
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+}
+.wp-block-gla-webglslider .slide-content.is-position-center-right .slide-buttons {
+  justify-content: flex-end;
+}
+.wp-block-gla-webglslider .slide-content.is-position-bottom-left {
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+}
+.wp-block-gla-webglslider .slide-content.is-position-bottom-left .slide-buttons {
+  justify-content: flex-start;
+}
+.wp-block-gla-webglslider .slide-content.is-position-bottom-center {
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-bottom-center .slide-buttons {
+  justify-content: center;
+}
+.wp-block-gla-webglslider .slide-content.is-position-bottom-right {
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+.wp-block-gla-webglslider .slide-content.is-position-bottom-right .slide-buttons {
+  justify-content: flex-end;
+}
+
+.wp-block-gla-webglslider .slide-author {
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: var(--slider-author-color);
+  font-size: var(--slider-author-size);
+  font-family: var(--slider-author-font);
+}
+
+.wp-block-gla-webglslider .slide-title {
+  margin: 10px 0;
+  line-height: 1.1;
+  color: var(--slider-title-color);
+  font-size: var(--slider-title-size);
+  font-family: var(--slider-title-font);
+}
+
+.wp-block-gla-webglslider .slide-topic {
+  margin: 10px 0;
+  line-height: 1.1;
+  color: var(--slider-topic-color);
+  font-size: var(--slider-topic-size);
+  font-family: var(--slider-topic-font);
+}
+
+.wp-block-gla-webglslider .slide-description {
+  margin-top: 10px;
+}
+
+.wp-block-gla-webglslider .slide-buttons {
+  display: flex; /* Flexbox instead of CSS Grid for better item wrapping and reflow */
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.wp-block-gla-webglslider .slide-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 45px;
+  padding: 4px 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.wp-block-gla-webglslider .slide-buttons .button-1 {
+  color: var(--slider-button1-textcolor);
+  background-color: var(--slider-button1-color);
+  border-radius: var(--slider-button1-borderradius);
+}
+
+.wp-block-gla-webglslider .slide-buttons .button-1.has-outline {
+  border: var(--slider-button1-outlinewidth, 0px) solid var(--slider-button1-outlinecolor, transparent);
+}
+
+.wp-block-gla-webglslider .slide-buttons .button-1:hover {
+  background-color: var(--slider-button1-hovercolor);
+  color: var(--slider-button1-hovertextcolor);
+}
+
+.wp-block-gla-webglslider .slide-buttons .button-2 {
+  color: var(--slider-button2-textcolor);
+  background-color: var(--slider-button2-color);
+  border-radius: var(--slider-button2-borderradius);
+}
+
+.wp-block-gla-webglslider .slide-buttons .button-2.has-outline {
+  border: var(--slider-button2-outlinewidth, 0px) solid var(--slider-button2-outlinecolor, transparent);
+}
+
+.wp-block-gla-webglslider .slide-buttons .button-2:hover {
+  background-color: var(--slider-button2-hovercolor);
+  color: var(--slider-button2-hovertextcolor);
+}
+
+/*------------------------*/
+/* navigation arrows      */
+/*------------------------*/
+.wp-block-gla-webglslider .slide-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.wp-block-gla-webglslider .slide-arrows button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: rgba(238, 238, 238, 0.2666666667);
+  border: none;
+  color: #fff;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.5s;
+  pointer-events: auto;
+}
+
+.wp-block-gla-webglslider .slide-arrows button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/*------------------------*/
+/* pagination             */
+/*------------------------*/
+.wp-block-gla-webglslider .slide-pagination {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+}
+
+.wp-block-gla-webglslider .slide-pagination button {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(238, 238, 238, 0.2666666667);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 2px;
+}
+
+.wp-block-gla-webglslider .slide-pagination button:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+}
+
+.wp-block-gla-webglslider .slide-pagination button.active {
+  background-color: #f1683a;
+  transform: scale(1.1);
+}
+
+.wp-block-gla-webglslider .slide-arrows button:focus-visible,
+.wp-block-gla-webglslider .slide-pagination button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* while a transition runs, navigation is locked */
+.wp-block-gla-webglslider.is-animating .slide-arrows button,
+.wp-block-gla-webglslider.is-animating .slide-pagination button {
+  pointer-events: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* content animation (fade-in) author/title/topic/description & buttons */
+/*----------------------------------------------------------------------*/
+/* content is invisible at the start position */
+.wp-block-gla-webglslider .slide-content > * {
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+}
+
+/* the current slide fades its content in, one element after the other.
+   Since the new slide only becomes "current" AFTER the transition, the text
+   appears once the image is fully revealed. */
+.wp-block-gla-webglslider .slide-item.is-current .slide-content > * {
+  animation: showContent 0.5s linear 1 forwards;
+}
+
+.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-author {
+  animation-delay: 0.6s;
+}
+
+.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-title {
+  animation-delay: 0.8s;
+}
+
+.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-topic {
+  animation-delay: 1s;
+}
+
+.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-description {
+  animation-delay: 1.2s;
+}
+
+.wp-block-gla-webglslider .slide-item.is-current .slide-content .slide-buttons {
+  animation-delay: 1.4s;
+}
+
+/* the outgoing slide's text fades away while the transition starts */
+.wp-block-gla-webglslider .slide-item.is-current.is-leaving .slide-content > * {
+  animation: hideContent 0.4s ease-in 1 forwards;
+  animation-delay: 0s !important;
+}
+
+/*------------------------------------------------------------*/
+/* progress bar (top) while a transition runs                 */
+/*------------------------------------------------------------*/
+.wp-block-gla-webglslider .slide-time {
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 3px;
+  background-color: #f1683a;
+  left: 0;
+  top: 0;
+}
+
+.wp-block-gla-webglslider.is-animating .slide-time {
+  animation: runningTime var(--webgl-duration) linear 1 forwards;
+}
+
+/*--------------------------------------------------------------
+# WebGL canvas + CSS fallback
+--------------------------------------------------------------*/
+/**
+ * view.js inserts ONE canvas into .slide-list, as the first child (below all
+ * slides). It is drawn pixel-identical to the <img> elements (cover fit +
+ * parallax), so as soon as it is ready ("is-webgl") the images just get hidden.
+ * The images stay in the DOM: no-JS, SEO, fallback.
+ */
+.wp-block-gla-webglslider .gla-gl-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.wp-block-gla-webglslider.is-webgl .gla-gl-canvas {
+  visibility: visible;
+}
+
+.wp-block-gla-webglslider.is-webgl .slide-item img {
+  visibility: hidden;
+}
+
+/**
+ * Fallback without WebGL (not supported, "reduce motion", save-data, error):
+ * the outgoing image fades out and reveals the next one underneath.
+ */
+.wp-block-gla-webglslider:not(.is-webgl) .slide-item.is-leaving img {
+  opacity: 0;
+  transition: opacity var(--webgl-duration) ease-in-out;
+}
+
+/*------------------------*/
+/* smartphones            */
+/*------------------------*/
+@media (max-width: 767px) {
+  .wp-block-gla-webglslider {
+    /* slider height on mobile slightly reduced */
+    height: 80vh;
+    height: 80svh;
+  }
+  .wp-block-gla-webglslider .slide-content {
+    /* less space to the edge, but clear of the (smaller) arrows */
+    --gla-content-pad-x: 44px;
+    --gla-content-pad-y: 70px;
+  }
+  .wp-block-gla-webglslider .slide-arrows {
+    padding: 0 8px;
+  }
+  .wp-block-gla-webglslider .slide-arrows button {
+    width: 32px;
+    height: 32px;
+  }
+  /* override the CSS variables for mobile devices */
+  .wp-block-gla-webglslider .slide-author {
+    --slider-author-size: 16px;
+    margin-bottom: 5px;
+  }
+  .wp-block-gla-webglslider .slide-title {
+    --slider-title-size: 28px;
+    margin: 5px 0;
+  }
+  .wp-block-gla-webglslider .slide-topic {
+    --slider-topic-size: 16px;
+    margin: 5px 0;
+  }
+  .wp-block-gla-webglslider .slide-description {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-top: 5px;
+  }
+  .wp-block-gla-webglslider .slide-buttons {
+    margin-top: 12px;
+    gap: 10px;
+  }
+  .wp-block-gla-webglslider .slide-buttons a {
+    height: 38px; /* flatter buttons */
+    padding: 0 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}
+/*------------------------------------------------------------------*/
+/* OS setting "reduce motion": instant slide change, no WebGL,     */
+/* no parallax, no text animation                                   */
+/*------------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  .wp-block-gla-webglslider {
+    /* !important beats the inline style set by render.php */
+    --webgl-duration: 1ms !important;
+  }
+  .wp-block-gla-webglslider .slide-item img {
+    transform: none !important;
+    transition: none;
+  }
+  .wp-block-gla-webglslider .slide-item.is-current .slide-content > * {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

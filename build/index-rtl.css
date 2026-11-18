@@ -1,1 +1,244 @@
-@keyframes showContent{to{filter:blur(0);opacity:1;transform:translateY(0)}}@keyframes hideContent{0%{filter:blur(0);opacity:1;transform:translateY(0)}to{filter:blur(10px);opacity:0;transform:translateY(-30px)}}@keyframes runningTime{0%{width:100%}to{width:0}}.editor-styles-wrapper .wp-block-gla-webglslider{margin-right:0!important;margin-left:0!important;max-width:100%!important;touch-action:auto;user-select:auto;-webkit-user-select:auto;width:auto}.wp-block-gla-webglslider{background:#f0f0f0;border:2px dashed #007cba;height:auto;min-height:400px;padding:20px}.wp-block-gla-webglslider .editor-gla-webglslider-preview{align-items:center;background-color:#eee;border:1px solid #ddd;display:flex;height:400px;justify-content:center;margin:20px auto;max-width:800px;overflow:hidden;position:relative}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-slideno{align-items:center;display:flex;position:absolute;top:0}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-image{height:auto;max-height:500px;object-fit:cover;opacity:.5;width:100%}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content{align-items:center;box-sizing:border-box;display:flex;flex-direction:column;inset:0;justify-content:center;padding:36px 20px 20px;position:absolute;text-align:center;z-index:10}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-left{align-items:flex-start;justify-content:flex-start;text-align:right}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-left .slide-buttons{justify-content:flex-start}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-center{align-items:center;justify-content:flex-start;text-align:center}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-center .slide-buttons{justify-content:center}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-right{align-items:flex-end;justify-content:flex-start;text-align:left}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-right .slide-buttons{justify-content:flex-end}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-left{align-items:flex-start;justify-content:center;text-align:right}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-left .slide-buttons{justify-content:flex-start}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-center{align-items:center;justify-content:center;text-align:center}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-center .slide-buttons{justify-content:center}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-right{align-items:flex-end;justify-content:center;text-align:left}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-right .slide-buttons{justify-content:flex-end}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-left{align-items:flex-start;justify-content:flex-end;text-align:right}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-left .slide-buttons{justify-content:flex-start}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-center{align-items:center;justify-content:flex-end;text-align:center}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-center .slide-buttons{justify-content:center}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-right{align-items:flex-end;justify-content:flex-end;text-align:left}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-right .slide-buttons{justify-content:flex-end}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-author{color:var(--slider-author-color);font-family:var(--slider-author-font);font-size:var(--slider-author-size);font-weight:700;letter-spacing:2px;margin-bottom:8px}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-title{color:var(--slider-title-color);font-family:var(--slider-title-font);font-size:var(--slider-title-size);line-height:1;margin:5px 0}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-topic{color:var(--slider-topic-color);font-family:var(--slider-topic-font);font-size:var(--slider-topic-size);line-height:1;margin:5px 0}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-description{font-size:14px;margin:10px 0}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons{display:flex;gap:10px;margin-top:15px;width:100%}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons a{align-items:center;cursor:default;display:flex;font-size:.75em;font-weight:600;height:36px;justify-content:center;padding:4px 16px;text-decoration:none;width:auto}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-1{background-color:var(--slider-button1-color);border-radius:var(--slider-button1-borderradius);color:var(--slider-button1-textcolor)}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-1.has-outline{border:var(--slider-button1-outlinewidth,0) solid var(--slider-button1-outlinecolor,transparent)}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-1:hover{background-color:var(--slider-button1-hovercolor);color:var(--slider-button1-hovertextcolor)}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-2{background-color:var(--slider-button2-color);border-radius:var(--slider-button2-borderradius);color:var(--slider-button2-textcolor)}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-2.has-outline{border:var(--slider-button2-outlinewidth,0) solid var(--slider-button2-outlinecolor,transparent)}.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-2:hover{background-color:var(--slider-button2-hovercolor);color:var(--slider-button2-hovertextcolor)}
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ */
+/* common mixins */
+/**
+ * Content position of a single slide (9 positions).
+ * Class name: is-position-{vertical}-{horizontal}, e.g. is-position-top-left.
+ *
+ * The content box fills the whole slide and is a flex column:
+ *   - justify-content = vertical position   (top / center / bottom)
+ *   - align-items     = horizontal position (left / center / right)
+ * text-align and the button row follow the horizontal position.
+ */
+/* animations */
+@keyframes showContent {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes hideContent {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+    filter: blur(10px);
+  }
+}
+@keyframes runningTime {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+/* The frontend styles make the block full width (100vw) and lock text selection / touch.
+   Not wanted inside the editor canvas, so reset it here (higher specificity wins
+   regardless of the load order of style.css / editor.css). */
+.editor-styles-wrapper .wp-block-gla-webglslider {
+  /* width: auto; */
+  /* margin-left: 0 !important; */
+  /* margin-right: 0 !important; */
+  /* max-width: 100% !important; */
+  touch-action: auto;
+  user-select: auto;
+  -webkit-user-select: auto;
+}
+
+.wp-block-gla-webglslider {
+  padding: 20px;
+  border: 2px dashed #007cba;
+  height: auto;
+  min-height: 400px;
+  background: #f0f0f0;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview {
+  position: relative;
+  height: 400px;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-slideno {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content {
+  position: absolute;
+  inset: 0;
+  /* top padding leaves room for the info text of the preview */
+  padding: 36px 20px 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* default (e.g. unknown value): centered */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* 9 positions, same mixin as in style.scss */
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-left {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: right;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-left .slide-buttons {
+  justify-content: flex-start;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-center {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-center .slide-buttons {
+  justify-content: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-right {
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-top-right .slide-buttons {
+  justify-content: flex-end;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-left {
+  justify-content: center;
+  align-items: flex-start;
+  text-align: right;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-left .slide-buttons {
+  justify-content: flex-start;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-center .slide-buttons {
+  justify-content: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-right {
+  justify-content: center;
+  align-items: flex-end;
+  text-align: left;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-center-right .slide-buttons {
+  justify-content: flex-end;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-left {
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: right;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-left .slide-buttons {
+  justify-content: flex-start;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-center {
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-center .slide-buttons {
+  justify-content: center;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-right {
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: left;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content.is-position-bottom-right .slide-buttons {
+  justify-content: flex-end;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-author {
+  color: var(--slider-author-color);
+  font-size: var(--slider-author-size);
+  font-family: var(--slider-author-font);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-title {
+  color: var(--slider-title-color);
+  font-size: var(--slider-title-size);
+  font-family: var(--slider-title-font);
+  margin: 5px 0;
+  line-height: 1;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-topic {
+  color: var(--slider-topic-color);
+  font-size: var(--slider-topic-size);
+  font-family: var(--slider-topic-font);
+  margin: 5px 0;
+  line-height: 1;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-description {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 36px;
+  padding: 4px 16px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: default;
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-1 {
+  color: var(--slider-button1-textcolor);
+  background-color: var(--slider-button1-color);
+  border-radius: var(--slider-button1-borderradius);
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-1.has-outline {
+  border: var(--slider-button1-outlinewidth, 0px) solid var(--slider-button1-outlinecolor, transparent);
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-1:hover {
+  background-color: var(--slider-button1-hovercolor);
+  color: var(--slider-button1-hovertextcolor);
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-2 {
+  color: var(--slider-button2-textcolor);
+  background-color: var(--slider-button2-color);
+  border-radius: var(--slider-button2-borderradius);
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-2.has-outline {
+  border: var(--slider-button2-outlinewidth, 0px) solid var(--slider-button2-outlinecolor, transparent);
+}
+.wp-block-gla-webglslider .editor-gla-webglslider-preview .editor-gla-webglslider-content .editor-gla-webglslider-buttons .button-2:hover {
+  background-color: var(--slider-button2-hovercolor);
+  color: var(--slider-button2-hovertextcolor);
+}

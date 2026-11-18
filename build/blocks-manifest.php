@@ -5,7 +5,7 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'gla/webglslider',
-		'version' => '1.1.0',
+		'version' => '1.2.0',
 		'title' => 'WebGL Slider',
 		'category' => 'widgets',
 		'icon' => 'slides',
@@ -18,6 +18,10 @@ return array(
 		),
 		'supports' => array(
 			'anchor' => true,
+			'align' => array(
+				'wide',
+				'full'
+			),
 			'color' => array(
 				'background' => true,
 				'text' => false
@@ -34,6 +38,10 @@ return array(
 			'preview' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'full'
 			),
 			'autoplay' => array(
 				'type' => 'boolean',

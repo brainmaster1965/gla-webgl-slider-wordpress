@@ -1,6 +1,6 @@
 {
 	"name": "gla-webglslider",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "A fancy slider block for WP Gutenberg with WebGL transition effects.",
 	"author": "GLa",
 	"license": "GPL-2.0-or-later",

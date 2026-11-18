@@ -1,1 +1,53 @@
-"use strict";(globalThis.webpackChunkgla_webglslider||=[]).push([[790],{812(e,t,n){n.r(t),n.d(t,["fragment",0,"\nuniform float uAngle;\nuniform float uRadius;\n\nvec4 transition(vec2 uv) {\n\tfloat p = uProgress;\n\tvec2 aspect = vec2(GLA_ASPECT, 1.0);\n\n\tvec2 d = (uv - uMouse) * aspect;\n\tfloat falloff = 1.0 - smoothstep(0.0, uRadius, length(d));\n\tfloat a = uAngle * falloff * sin(p * GLA_PI) * uDir;\n\n\tfloat s = sin(a);\n\tfloat c = cos(a);\n\tvec2 rd = vec2(d.x * c - d.y * s, d.x * s + d.y * c);\n\tvec2 suv = uMouse + rd / aspect;\n\n\treturn mix(getFrom(suv), getTo(suv), smoothstep(0.3, 0.7, p));\n}\n","meta",0,{label:"Swirl",description:"Strudel um die Mausposition, Überblendung mitten in der Drehung.",order:100,ease:"power2.inOut",textures:[]},"uniforms",0,{uAngle:5,uRadius:1.1}])}}]);
+"use strict";
+(globalThis["webpackChunkgla_webglslider"] ||= []).push([["effect-swirl-js"],{
+
+/***/ "./src/webgl/effects/swirl.js"
+/*!************************************!*\
+  !*** ./src/webgl/effects/swirl.js ***!
+  \************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   fragment: () => (/* binding */ fragment),
+/* harmony export */   meta: () => (/* binding */ meta),
+/* harmony export */   uniforms: () => (/* binding */ uniforms)
+/* harmony export */ });
+/** Twirl around the pointer, cross-fade in the middle of the spin. */
+const meta = {
+  label: "Swirl",
+  description: "Strudel um die Mausposition, Überblendung mitten in der Drehung.",
+  order: 100,
+  ease: "power2.inOut",
+  textures: []
+};
+const uniforms = {
+  uAngle: 5.0,
+  // radians in the centre
+  uRadius: 1.1
+};
+const fragment = /* glsl */`
+uniform float uAngle;
+uniform float uRadius;
+
+vec4 transition(vec2 uv) {
+	float p = uProgress;
+	vec2 aspect = vec2(GLA_ASPECT, 1.0);
+
+	vec2 d = (uv - uMouse) * aspect;
+	float falloff = 1.0 - smoothstep(0.0, uRadius, length(d));
+	float a = uAngle * falloff * sin(p * GLA_PI) * uDir;
+
+	float s = sin(a);
+	float c = cos(a);
+	vec2 rd = vec2(d.x * c - d.y * s, d.x * s + d.y * c);
+	vec2 suv = uMouse + rd / aspect;
+
+	return mix(getFrom(suv), getTo(suv), smoothstep(0.3, 0.7, p));
+}
+`;
+
+/***/ }
+
+}]);
+//# sourceMappingURL=effect-swirl-js.js.map?ver=782ba96e547da74e4361

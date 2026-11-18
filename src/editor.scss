@@ -1,16 +1,16 @@
 /**
  * The following styles get applied inside the editor only.
  */
-@import "config";
+@import 'config';
 
 /* The frontend styles make the block full width (100vw) and lock text selection / touch.
    Not wanted inside the editor canvas, so reset it here (higher specificity wins
    regardless of the load order of style.css / editor.css). */
 .editor-styles-wrapper .wp-block-gla-webglslider {
-	width: auto;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	max-width: 100% !important;
+	/* width: auto; */ // 2026.11.18
+	/* margin-left: 0 !important; */ // 2026.11.18
+	/* margin-right: 0 !important; */ // 2026.11.18
+	/* max-width: 100% !important; */ // 2026.11.18
 	touch-action: auto;
 	user-select: auto;
 	-webkit-user-select: auto;
@@ -123,11 +123,16 @@
 						&.has-outline {
 							border: var(--slider-button#{$i}-outlinewidth, 0px)
 								solid
-								var(--slider-button#{$i}-outlinecolor, transparent);
+								var(
+									--slider-button#{$i}-outlinecolor,
+									transparent
+								);
 						}
 
 						&:hover {
-							background-color: var(--slider-button#{$i}-hovercolor);
+							background-color: var(
+								--slider-button#{$i}-hovercolor
+							);
 							color: var(--slider-button#{$i}-hovertextcolor);
 						}
 					}

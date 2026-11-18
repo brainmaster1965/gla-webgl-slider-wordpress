@@ -3,7 +3,7 @@
  * Hero Slider with WebGL transition effects (canvas, see src/webgl/), CSS
  * cross-fade as fallback, and scroll parallax.
  */
-@import "config";
+@import 'config';
 
 /*------------------------*/
 /* general / full width   */
@@ -14,19 +14,19 @@
 	   (the name is a leftover of the old webgl effect, kept for compatibility) */
 	--webgl-duration: 1500ms;
 	/* 100vw includes the scrollbar; view.js writes its width to --gla-scrollbar-width */
-	--gla-hero-width: calc(100vw - var(--gla-scrollbar-width, 0px));
+	/* --gla-hero-width: calc(100vw - var(--gla-scrollbar-width, 0px)); */ // 2026.11.18
 
 	position: relative;
 	top: 0;
 	left: 0;
 	height: 100vh;
-	height: 100svh; /* mobile: ignores the collapsing browser address bar */
-	width: var(--gla-hero-width);
+	height: 100svh; /* mobile: ignores the collapsing browser address bar */ // 2026.11.18
+	/* width: var(--gla-hero-width); */ // 2026.11.18
 	/* full width look, even inside a narrow content column */
-	margin-left: calc((100% - var(--gla-hero-width)) / 2) !important;
-	margin-right: calc((100% - var(--gla-hero-width)) / 2) !important;
+	/* margin-left: calc((100% - var(--gla-hero-width)) / 2) !important; */ // 2026.11.18
+	/* margin-right: calc((100% - var(--gla-hero-width)) / 2) !important; */ // 2026.11.18
 	/* important override theme restrictions */
-	max-width: none !important;
+	/* max-width: none !important; */ // 2026.11.18
 	overflow: hidden;
 	/* no text selection while swiping */
 	user-select: none;

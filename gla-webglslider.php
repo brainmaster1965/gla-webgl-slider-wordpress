@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Gla WebGL Slider
  * Description:       A fancy slider block for WP Gutenberg with WebGL transition effects.
- * Version:           1.1.0
+ * Version:           1.2.0
  * Requires at least: 6.8
  * Requires PHP:      7.4
  * Author:            GLa

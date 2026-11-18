@@ -20,7 +20,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 /* global __webpack_public_path__ */
-import domReady from "@wordpress/dom-ready";
+import domReady from '@wordpress/dom-ready';
 
 const DEFAULT_DURATION = 1500; // ms, fallback if --webgl-duration is missing
 const DEFAULT_INTERVAL = 7000; // ms
@@ -30,13 +30,13 @@ const CENTER = { x: 0.5, y: 0.5 }; // transition origin when there is no pointer
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const clamp01 = (value) => Math.min(1, Math.max(0, value));
 const prefersReducedMotion = () =>
-	window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const isMobileViewport = () => window.matchMedia("(max-width: 767px)").matches;
+	window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isMobileViewport = () => window.matchMedia('(max-width: 767px)').matches;
 
 /** Runs `callback` once the page (incl. the hero image) has loaded, so WebGL never competes with the LCP. */
 function afterPageLoad(callback) {
-	if (document.readyState === "complete") callback();
-	else window.addEventListener("load", callback, { once: true });
+	if (document.readyState === 'complete') callback();
+	else window.addEventListener('load', callback, { once: true });
 }
 
 /**
@@ -50,11 +50,11 @@ function afterPageLoad(callback) {
  */
 function readWebglDuration(container) {
 	const raw = getComputedStyle(container)
-		.getPropertyValue("--webgl-duration")
+		.getPropertyValue('--webgl-duration')
 		.trim();
 	const value = parseFloat(raw);
 	if (!Number.isFinite(value) || value <= 0) return DEFAULT_DURATION;
-	return raw.endsWith("ms") ? value : value * 1000;
+	return raw.endsWith('ms') ? value : value * 1000;
 }
 
 /**
@@ -64,29 +64,31 @@ function readWebglDuration(container) {
  */
 function initializeGlawebglslider(container) {
 	// 1. Fetch instance-specific DOM elements (arrows/pagination/progress are optional)
-	const sliderDom = container.querySelector(".slide-list");
-	const prevDom = container.querySelector(".slide-prev");
-	const nextDom = container.querySelector(".slide-next");
-	const paginationDom = container.querySelector(".slide-pagination");
-	const timeDom = container.querySelector(".slide-time");
+	const sliderDom = container.querySelector('.slide-list');
+	const prevDom = container.querySelector('.slide-prev');
+	const nextDom = container.querySelector('.slide-next');
+	const paginationDom = container.querySelector('.slide-pagination');
+	const timeDom = container.querySelector('.slide-time');
 
 	if (!sliderDom) {
-		console.error("Hero Slider: .slide-list not found.", container);
+		console.error('Hero Slider: .slide-list not found.', container);
 		return;
 	}
 
-	const slides = Array.from(sliderDom.querySelectorAll(".slide-item"));
+	const slides = Array.from(sliderDom.querySelectorAll('.slide-item'));
 	const count = slides.length;
 	if (count === 0) return;
 
 	// 2. Settings from data attributes / CSS
-	const isAutoplayEnabled = container.dataset.autoplay === "true" && count > 1;
-	const interval = parseInt(container.dataset.interval, 10) || DEFAULT_INTERVAL;
-	const isStopOnHoverEnabled = container.dataset.stopOnHover !== "false";
+	const isAutoplayEnabled =
+		container.dataset.autoplay === 'true' && count > 1;
+	const interval =
+		parseInt(container.dataset.interval, 10) || DEFAULT_INTERVAL;
+	const isStopOnHoverEnabled = container.dataset.stopOnHover !== 'false';
 	const duration = readWebglDuration(container);
 
 	// Progress bar only makes sense together with autoplay
-	if (timeDom && !isAutoplayEnabled) timeDom.style.display = "none";
+	if (timeDom && !isAutoplayEnabled) timeDom.style.display = 'none';
 
 	// 3. State
 	let current = 0; // slide that is shown (or is being left)
@@ -112,9 +114,9 @@ function initializeGlawebglslider(container) {
 	 * @returns {"next"|"prev"}
 	 */
 	function resolveDirection(to) {
-		if (to === (current + 1) % count) return "next";
-		if (to === (current - 1 + count) % count) return "prev";
-		return to > current ? "next" : "prev";
+		if (to === (current + 1) % count) return 'next';
+		if (to === (current - 1 + count) % count) return 'prev';
+		return to > current ? 'next' : 'prev';
 	}
 
 	/** Pointer position (0..1, y up) relative to the slider, centre if there is none. */
@@ -137,9 +139,9 @@ function initializeGlawebglslider(container) {
 
 	function setActiveDot(index) {
 		dots.forEach((dot, i) => {
-			dot.classList.toggle("active", i === index);
-			if (i === index) dot.setAttribute("aria-current", "true");
-			else dot.removeAttribute("aria-current");
+			dot.classList.toggle('active', i === index);
+			if (i === index) dot.setAttribute('aria-current', 'true');
+			else dot.removeAttribute('aria-current');
 		});
 	}
 
@@ -151,7 +153,7 @@ function initializeGlawebglslider(container) {
 		const isPaused =
 			(isStopOnHoverEnabled && isHovering) || isDragging || !isInView;
 		if (!isAutoplayEnabled || isPaused || target !== null) return;
-		autoTimer = setTimeout(() => start("next"), interval);
+		autoTimer = setTimeout(() => start('next'), interval);
 	}
 
 	/* ------------------------------------------------------------------ *
@@ -160,9 +162,9 @@ function initializeGlawebglslider(container) {
 
 	/** Back to the plain <img> slider (WebGL lost, texture failed, ...). Never throws. */
 	function disableWebgl(reason) {
-		if (reason) console.warn("WebGL Slider: WebGL switched off.", reason);
+		if (reason) console.warn('WebGL Slider: WebGL switched off.', reason);
 		webglDisabled = true;
-		container.classList.remove("is-webgl");
+		container.classList.remove('is-webgl');
 		if (resizeObserver) resizeObserver.disconnect();
 		resizeObserver = null;
 		const old = stage;
@@ -199,21 +201,24 @@ function initializeGlawebglslider(container) {
 		}
 
 		stage = newStage;
-		container.classList.add("is-webgl");
+		container.classList.add('is-webgl');
 		newStage.render(); // canvas just became visible, make sure it shows the frame
 
-		if ("ResizeObserver" in window) {
+		if ('ResizeObserver' in window) {
 			resizeObserver = new ResizeObserver(() => stage && stage.resize());
 			resizeObserver.observe(sliderDom);
 		}
-		newStage.preload([(current + 1) % count, (current - 1 + count) % count]);
+		newStage.preload([
+			(current + 1) % count,
+			(current - 1 + count) % count,
+		]);
 	}
 
 	/** Loads three.js + the chosen effect (own chunks) and prepares the canvas. */
 	async function initWebgl() {
 		if (webglDisabled || stage || pendingStage) return;
 
-		const images = slides.map((slide) => slide.querySelector("img"));
+		const images = slides.map((slide) => slide.querySelector('img'));
 		try {
 			// Where the chunks live. Normally detected by webpack itself; this makes it work
 			// even if a caching plugin concatenates view.js into a bundle somewhere else.
@@ -222,15 +227,15 @@ function initializeGlawebglslider(container) {
 			}
 
 			const { createStage } = await import(
-				/* webpackChunkName: "webgl" */ "./webgl"
+				/* webpackChunkName: "webgl" */ './webgl'
 			);
 			const newStage = await createStage({
 				effectId: container.dataset.effect,
 				host: sliderDom,
-				sources: images.map((img) => (img ? img.src : "")),
+				sources: images.map((img) => (img ? img.src : '')),
 				referenceImage: images.find(Boolean) || null,
-				assetsUrl: container.dataset.glAssets || "",
-				onLost: () => disableWebgl("context lost"),
+				assetsUrl: container.dataset.glAssets || '',
+				onLost: () => disableWebgl('context lost'),
 			});
 
 			if (webglDisabled) {
@@ -259,7 +264,7 @@ function initializeGlawebglslider(container) {
 		const next =
 			to !== undefined
 				? to
-				: direction === "next"
+				: direction === 'next'
 					? (current + 1) % count
 					: (current - 1 + count) % count;
 		if (next === current || next < 0 || next >= count) return;
@@ -277,15 +282,15 @@ function initializeGlawebglslider(container) {
 			}
 		}
 
-		slides[current].classList.add("is-leaving", `leaving-${direction}`);
-		slides[target].classList.add("is-target");
-		container.classList.add("is-animating");
+		slides[current].classList.add('is-leaving', `leaving-${direction}`);
+		slides[target].classList.add('is-target');
+		container.classList.add('is-animating');
 
 		let done = false;
 		if (stage) {
 			try {
 				await stage.transition(next, {
-					dir: direction === "next" ? 1 : -1,
+					dir: direction === 'next' ? 1 : -1,
 					origin: origin || CENTER,
 					duration: duration / 1000,
 				});
@@ -304,23 +309,26 @@ function initializeGlawebglslider(container) {
 	function finish() {
 		const leaving = slides[current];
 		leaving.classList.remove(
-			"is-current",
-			"is-leaving",
-			"leaving-next",
-			"leaving-prev",
+			'is-current',
+			'is-leaving',
+			'leaving-next',
+			'leaving-prev',
 		);
 
-		slides[target].classList.remove("is-target");
-		slides[target].classList.add("is-current");
+		slides[target].classList.remove('is-target');
+		slides[target].classList.add('is-current');
 
 		current = target;
 		target = null;
 
-		container.classList.remove("is-animating");
+		container.classList.remove('is-animating');
 		syncInert();
 
 		if (stage) {
-			stage.preload([(current + 1) % count, (current - 1 + count) % count]);
+			stage.preload([
+				(current + 1) % count,
+				(current - 1 + count) % count,
+			]);
 		} else if (pendingStage) {
 			const waiting = pendingStage;
 			pendingStage = null;
@@ -331,13 +339,14 @@ function initializeGlawebglslider(container) {
 
 	// === PAGINATION (any dot = one single transition) ===
 	if (paginationDom) {
-		paginationDom.innerHTML = "";
+		paginationDom.innerHTML = '';
 		for (let i = 0; i < count; i++) {
-			const button = document.createElement("button");
-			button.type = "button";
-			button.setAttribute("aria-label", `Go to slide ${i + 1}`);
-			button.addEventListener("click", () => {
-				if (i !== current) start(resolveDirection(i), i, originFromPointer());
+			const button = document.createElement('button');
+			button.type = 'button';
+			button.setAttribute('aria-label', `Go to slide ${i + 1}`);
+			button.addEventListener('click', () => {
+				if (i !== current)
+					start(resolveDirection(i), i, originFromPointer());
 			});
 			paginationDom.appendChild(button);
 			dots.push(button);
@@ -346,17 +355,17 @@ function initializeGlawebglslider(container) {
 
 	// === ARROWS ===
 	if (nextDom)
-		nextDom.addEventListener("click", () =>
-			start("next", undefined, originFromPointer()),
+		nextDom.addEventListener('click', () =>
+			start('next', undefined, originFromPointer()),
 		);
 	if (prevDom)
-		prevDom.addEventListener("click", () =>
-			start("prev", undefined, originFromPointer()),
+		prevDom.addEventListener('click', () =>
+			start('prev', undefined, originFromPointer()),
 		);
 
 	// === POINTER POSITION (origin of effects like ripple, dots, swirl) ===
 	container.addEventListener(
-		"pointermove",
+		'pointermove',
 		(e) => {
 			lastClient = { x: e.clientX, y: e.clientY };
 		},
@@ -364,14 +373,14 @@ function initializeGlawebglslider(container) {
 	);
 
 	// === HOVER PAUSE (mouse only, so touch devices never get stuck "hovering") ===
-	container.addEventListener("pointerenter", (e) => {
-		if (e.pointerType !== "mouse") return;
+	container.addEventListener('pointerenter', (e) => {
+		if (e.pointerType !== 'mouse') return;
 		isHovering = true;
 		if (isStopOnHoverEnabled) clearTimeout(autoTimer);
 	});
 
-	container.addEventListener("pointerleave", (e) => {
-		if (e.pointerType !== "mouse") return;
+	container.addEventListener('pointerleave', (e) => {
+		if (e.pointerType !== 'mouse') return;
 		isHovering = false;
 		lastClient = null;
 		if (isStopOnHoverEnabled) scheduleAutoplay();
@@ -380,11 +389,11 @@ function initializeGlawebglslider(container) {
 	// === SWIPE (touch + mouse drag) via Pointer Events ===
 	let dragStartX = null;
 
-	container.addEventListener("pointerdown", (e) => {
+	container.addEventListener('pointerdown', (e) => {
 		if (count < 2) return;
-		if (e.pointerType === "mouse" && e.button !== 0) return;
+		if (e.pointerType === 'mouse' && e.button !== 0) return;
 		// Do not hijack clicks on links and buttons
-		if (e.target.closest("a, button")) return;
+		if (e.target.closest('a, button')) return;
 
 		dragStartX = e.clientX;
 		lastClient = { x: e.clientX, y: e.clientY };
@@ -397,7 +406,7 @@ function initializeGlawebglslider(container) {
 		}
 	});
 
-	container.addEventListener("pointerup", (e) => {
+	container.addEventListener('pointerup', (e) => {
 		if (dragStartX === null) return;
 		const distance = e.clientX - dragStartX;
 		dragStartX = null;
@@ -406,13 +415,17 @@ function initializeGlawebglslider(container) {
 
 		if (Math.abs(distance) >= MIN_SWIPE_DISTANCE) {
 			// ignored automatically while a transition is running
-			start(distance < 0 ? "next" : "prev", undefined, originFromPointer());
+			start(
+				distance < 0 ? 'next' : 'prev',
+				undefined,
+				originFromPointer(),
+			);
 		}
 		scheduleAutoplay();
 	});
 
 	// Browser aborted the gesture (e.g. vertical scroll took over): resume autoplay
-	container.addEventListener("pointercancel", () => {
+	container.addEventListener('pointercancel', () => {
 		dragStartX = null;
 		isDragging = false;
 		scheduleAutoplay();
@@ -420,7 +433,7 @@ function initializeGlawebglslider(container) {
 
 	// === VISIBILITY: autoplay only runs while the slider is on screen ===
 	// (several sliders on one page must not all keep rotating in the background)
-	if (isAutoplayEnabled && "IntersectionObserver" in window) {
+	if (isAutoplayEnabled && 'IntersectionObserver' in window) {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				isInView = entries[entries.length - 1].isIntersecting;
@@ -440,14 +453,15 @@ function initializeGlawebglslider(container) {
 
 	if (canUseWebgl) {
 		afterPageLoad(() => {
-			if ("IntersectionObserver" in window) {
+			if ('IntersectionObserver' in window) {
 				const glObserver = new IntersectionObserver(
 					(entries, obs) => {
-						if (!entries.some((entry) => entry.isIntersecting)) return;
+						if (!entries.some((entry) => entry.isIntersecting))
+							return;
 						obs.disconnect();
 						initWebgl();
 					},
-					{ rootMargin: "200px" },
+					{ rootMargin: '200px' },
 				);
 				glObserver.observe(container);
 			} else {
@@ -457,7 +471,7 @@ function initializeGlawebglslider(container) {
 	}
 
 	// === INITIALIZATION ===
-	slides[0].classList.add("is-current");
+	slides[0].classList.add('is-current');
 	syncInert();
 	setActiveDot(0);
 	scheduleAutoplay();
@@ -476,7 +490,7 @@ function initializeGlawebglslider(container) {
  * so the full-width slider never causes horizontal scrolling when a classic
  * (non-overlay) scrollbar is visible.
  */
-function updateScrollbarWidth() {
+/* function updateScrollbarWidth() {
 	const scrollbarWidth = Math.max(
 		0,
 		window.innerWidth - document.documentElement.clientWidth,
@@ -485,7 +499,7 @@ function updateScrollbarWidth() {
 		"--gla-scrollbar-width",
 		`${scrollbarWidth}px`,
 	);
-}
+} */ // 2026.11.18
 
 /**
  * Parallax: one shared scroll listener (rAF-throttled) for all slider instances.
@@ -507,10 +521,11 @@ function initParallax(containers, instances) {
 			const rect = container.getBoundingClientRect();
 			if (rect.top <= viewportHeight && rect.bottom >= 0) {
 				const totalDistance = viewportHeight + rect.height;
-				const currentProgress = (viewportHeight - rect.top) / totalDistance;
+				const currentProgress =
+					(viewportHeight - rect.top) / totalDistance;
 				const maxMovement = viewportHeight * 0.5; // corresponds to height: 150vh in CSS
 				const offset = -(currentProgress * maxMovement);
-				container.style.setProperty("--parallax-offset", `${offset}px`);
+				container.style.setProperty('--parallax-offset', `${offset}px`);
 
 				const instance = instances.get(container);
 				if (instance) instance.setParallax(parallaxOn ? offset : 0);
@@ -525,9 +540,9 @@ function initParallax(containers, instances) {
 	};
 
 	update();
-	window.addEventListener("scroll", requestUpdate, { passive: true });
-	window.addEventListener("resize", () => {
-		updateScrollbarWidth();
+	window.addEventListener('scroll', requestUpdate, { passive: true });
+	window.addEventListener('resize', () => {
+		// updateScrollbarWidth(); // 2026.11.18
 		requestUpdate();
 	});
 }
@@ -537,24 +552,24 @@ function initParallax(containers, instances) {
  */
 domReady(() => {
 	const sliderContainers = Array.from(
-		document.querySelectorAll(".wp-block-gla-webglslider"),
+		document.querySelectorAll('.wp-block-gla-webglslider'),
 	);
 	if (sliderContainers.length === 0) return;
 
-	updateScrollbarWidth();
+	// updateScrollbarWidth(); // 2026.11.18
 
 	const instances = new Map();
 
 	sliderContainers.forEach((container) => {
 		// Avoid double initialization (useful for AJAX or caching plugins)
-		if (container.hasAttribute("data-slider-initialized")) return;
+		if (container.hasAttribute('data-slider-initialized')) return;
 
 		const instance = initializeGlawebglslider(container);
 		if (instance) instances.set(container, instance);
-		container.setAttribute("data-slider-initialized", "true");
+		container.setAttribute('data-slider-initialized', 'true');
 
 		// Fade the images in on the next animation frame
-		window.requestAnimationFrame(() => container.classList.add("is-ready"));
+		window.requestAnimationFrame(() => container.classList.add('is-ready'));
 	});
 
 	initParallax(sliderContainers, instances);

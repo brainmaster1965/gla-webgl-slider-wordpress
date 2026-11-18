@@ -1,1 +1,58 @@
-"use strict";(globalThis.webpackChunkgla_webglslider||=[]).push([[68],{196(e,t,o){o.r(t),o.d(t,["fragment",0,"\nuniform float uEdge;\nuniform float uGlow;\nuniform vec3 uGlowColor;\n\nvec4 transition(vec2 uv) {\n\tfloat p = uProgress;\n\tvec2 nuv = vec2(uv.x * GLA_ASPECT, uv.y);\n\n\tfloat coarse = texture2D(uNoise, nuv * 0.22).r;\n\tfloat fine = texture2D(uNoise, nuv * 1.7 + 0.37).r;\n\tfloat n = smoothstep(0.2, 0.8, mix(coarse, fine, 0.25)); // stretch to 0..1\n\n\tfloat side = uDir > 0.0 ? 1.0 - uv.x : uv.x;\n\tfloat field = clamp(mix(n, side, 0.25), 0.0, 1.0);\n\n\tfloat t = p * (1.0 + 2.0 * uEdge) - uEdge;\n\tfloat reveal = 1.0 - smoothstep(t - uEdge, t + uEdge, field);\n\tfloat glow = reveal * (1.0 - reveal) * 4.0;\n\n\tvec4 col = mix(getFrom(uv), getTo(uv), reveal);\n\tcol.rgb += uGlowColor * glow * uGlow * 0.5;\n\treturn col;\n}\n","meta",0,{label:"Dissolve",description:"Auflösen über Noise-Muster mit leuchtender Kante.",order:90,ease:"power1.inOut",textures:["noise"]},"uniforms",0,{uEdge:.08,uGlow:1.4,uGlowColor:[.945,.408,.227]}])}}]);
+"use strict";
+(globalThis["webpackChunkgla_webglslider"] ||= []).push([["effect-dissolve-js"],{
+
+/***/ "./src/webgl/effects/dissolve.js"
+/*!***************************************!*\
+  !*** ./src/webgl/effects/dissolve.js ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   fragment: () => (/* binding */ fragment),
+/* harmony export */   meta: () => (/* binding */ meta),
+/* harmony export */   uniforms: () => (/* binding */ uniforms)
+/* harmony export */ });
+/** Noise dissolve with a glowing edge (uses assets/textures/noise.png, glow = theme orange). */
+const meta = {
+  label: "Dissolve",
+  description: "Auflösen über Noise-Muster mit leuchtender Kante.",
+  order: 90,
+  ease: "power1.inOut",
+  textures: ["noise"]
+};
+const uniforms = {
+  uEdge: 0.08,
+  uGlow: 1.4,
+  uGlowColor: [0.945, 0.408, 0.227] // #f1683a
+};
+const fragment = /* glsl */`
+uniform float uEdge;
+uniform float uGlow;
+uniform vec3 uGlowColor;
+
+vec4 transition(vec2 uv) {
+	float p = uProgress;
+	vec2 nuv = vec2(uv.x * GLA_ASPECT, uv.y);
+
+	float coarse = texture2D(uNoise, nuv * 0.22).r;
+	float fine = texture2D(uNoise, nuv * 1.7 + 0.37).r;
+	float n = smoothstep(0.2, 0.8, mix(coarse, fine, 0.25)); // stretch to 0..1
+
+	float side = uDir > 0.0 ? 1.0 - uv.x : uv.x;
+	float field = clamp(mix(n, side, 0.25), 0.0, 1.0);
+
+	float t = p * (1.0 + 2.0 * uEdge) - uEdge;
+	float reveal = 1.0 - smoothstep(t - uEdge, t + uEdge, field);
+	float glow = reveal * (1.0 - reveal) * 4.0;
+
+	vec4 col = mix(getFrom(uv), getTo(uv), reveal);
+	col.rgb += uGlowColor * glow * uGlow * 0.5;
+	return col;
+}
+`;
+
+/***/ }
+
+}]);
+//# sourceMappingURL=effect-dissolve-js.js.map?ver=ddd79dd22a05eac2e802
